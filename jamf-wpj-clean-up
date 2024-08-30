@@ -20,7 +20,7 @@ su "$currentuser" -c "security delete-generic-password -l 'com.jamf.management.j
 rm -rf /Users/"$currentuser"/Library/Saved\ Application\ State/com.jamfsoftware.selfservice.mac.savedState
 rm -r /Users/"$currentuser"/Library/Cookes/com.jamf.management.jamfAAD.binarycookies
 rm -rf /Users/"$currentuser"/Library/Saved\ Application\ State/com.jamf.management.jamfAAD.savedState
-su "$currentuser" -c "/Library/Application\ Support/JAMF/Jamf.app/Contents/MacOS/JamfAAD.app/Contents/MacOS/JamfAAD clean"
+su "$currentuser" -c "/Library/Application\ Support/JAMF/Jamf.app/Contents/MacOS/Jamf\ Conditional\ Access.app/Contents/MacOS/Jamf\ Conditional\ Access clean"
 #
 echo "Removing keychain password items for Company Portal app (v2.6 and higher with new com.microsoft.CompanyPortalMac bundle ID)"
 #Company Portal app items
@@ -35,10 +35,10 @@ su "$currentuser" -c "security delete-generic-password -l 'com.microsoft.Company
 su "$currentuser" -c "security delete-generic-password -l 'com.microsoft.CompanyPortal.HockeySDK'"
 su "$currentuser" -c "security delete-generic-password -l 'com.microsoft.adalcache'"
 su "$currentuser" -c "security delete-generic-password -l 'enterpriseregistration.windows.net'"
-su "$currentuser" -c "security delete-generic-password -l 'https://device.login.microsoftonline.com'"
-su "$currentuser" -c "security delete-generic-password -l 'https://device.login.microsoftonline.com/' "
-su "$currentuser" -c "security delete-generic-password -l 'https://enterpriseregistration.windows.net' "
-su "$currentuser" -c "security delete-generic-password -l 'https://enterpriseregistration.windows.net/' "
+su "$currentuser" -c "security delete-generic-password -l 'https://device.login.microsoftonline.com (UBF8T346G9.com.microsoft.CompanyPortalMac)' "
+su "$currentuser" -c "security delete-generic-password -l 'https://device.login.microsoftonline.com/ (UBF8T346G9.com.microsoft.CompanyPortalMac)' "
+su "$currentuser" -c "security delete-generic-password -l 'https://enterpriseregistration.windows.net (UBF8T346G9.com.microsoft.CompanyPortalMac)' "
+su "$currentuser" -c "security delete-generic-password -l 'https://enterpriseregistration.windows.net/ (UBF8T346G9.com.microsoft.CompanyPortalMac)' "
 su "$currentuser" -c "security delete-generic-password -a 'com.microsoft.workplacejoin.thumbprint' "
 su "$currentuser" -c "security delete-generic-password -a 'com.microsoft.workplacejoin.registeredUserPrincipalName' "
 #
